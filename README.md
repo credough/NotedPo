@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="design elements/NotedPo-logo.png.png" alt="NotedPo Logo" width="150"/>
+  <img src="frontend/design elements/NotedPo-logo.png.png" alt="NotedPo Logo" width="150"/>
 </p>
 NotedPo  
 
