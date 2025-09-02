@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="NotedPo Logo" width="150"/>
+  <img src="design elements/NotedPo-logo.png.png" alt="NotedPo Logo" width="150"/>
 </p>
 NotedPo  
 
@@ -35,7 +35,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 ![Saved Notes](savedB.jpg)
 
 ### **Contacts**
-![Contacts](contactB.jpg)
+![Contacts](questionsB.jpg)
 
 ---
 
