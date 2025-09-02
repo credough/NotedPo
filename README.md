@@ -39,7 +39,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 ![Contacts](questionsB.jpg)
 
 ### **Queries to my sheets**
-![Contacts](sheetsB.jpg)
+![Sheets](sheetsB.jpg)
 
 ---
 
