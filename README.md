@@ -63,5 +63,3 @@ The sole purpose of this project is to test myself if I can do simple full worki
 - Deployed with Render  
 
 ---
-
-This project marks my very first step into full-stack development and deployment. Excited to build more from here!
