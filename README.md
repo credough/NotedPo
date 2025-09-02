@@ -64,6 +64,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 **Backend:**  
 - Flask 
 - SQLite (for storing notes)  
-- Deployed with Render  
+- Deployed with Render
+- Google Forms & Sheets (for queries)
 
 ---
