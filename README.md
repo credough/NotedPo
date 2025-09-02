@@ -41,11 +41,13 @@ The sole purpose of this project is to test myself if I can do simple full worki
 
 ## Small Screen Responsiveness (mobile) 
 
-![Mobile 1](M1.PNG)  
-![Mobile 2](M2.PNG)  
-![Mobile 3](M3.PNG)  
-![Mobile 4](M4.PNG)  
-![Mobile 5](M5.PNG)  
+<p align="center">
+  <img src="M1.PNG" alt="Mobile 1" width="200"/>
+  <img src="M2.PNG" alt="Mobile 2" width="200"/>
+  <img src="M3.PNG" alt="Mobile 3" width="200"/>
+  <img src="M4.PNG" alt="Mobile 4" width="200"/>
+  <img src="M5.PNG" alt="Mobile 5" width="200"/>
+</p>
 
 ---
 
