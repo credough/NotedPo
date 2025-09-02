@@ -1,11 +1,12 @@
 <p align="center">
   <img src="loogo.png" alt="NotedPo Logo" width="150"/>
 </p>
-NotedPo  
 
-NotedPo is my very first fully deployed solo project — a simple yet functional note-taking / journaling web application.  
-This project was a big milestone for me as it’s the first time I’ve successfully deployed both the frontend and backend solo. 
-The sole purpose of this project is to test myself if I can do simple full working web application solo.
+
+**NotedPo** is my very first fully deployed solo project. A simple yet functional note-taking / journaling web application.  
+
+This project was a big step for me as it’s the first time that I’ve successfully deployed both frontend and backend only by solo. 
+The sole purpose of this project is to test myself if I can do simple full working web application.
 
 ---
 
