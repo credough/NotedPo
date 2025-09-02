@@ -4,7 +4,7 @@
 NotedPo  
 
 NotedPo is my very first fully deployed solo project — a simple yet functional note-taking / journaling web application.  
-This project was a big milestone for me as it’s the first time I’ve successfully deployed both the frontend and backend. 
+This project was a big milestone for me as it’s the first time I’ve successfully deployed both the frontend and backend solo. 
 The sole purpose of this project is to test myself if I can do simple full working web application solo.
 
 ---
