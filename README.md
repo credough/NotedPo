@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="logo.png" alt="NotedPo Logo" width="150"/>
+  <img src="loogo.png" alt="NotedPo Logo" width="150"/>
 </p>
 NotedPo  
 
 NotedPo is my very first fully deployed solo project — a simple yet functional note-taking / journaling web application.  
-This project was a big milestone for me as it’s the first time I’ve successfully deployed both the frontend and backend. 
+This project was a big milestone for me as it’s the first time I’ve successfully deployed both the frontend and backend solo. 
 The sole purpose of this project is to test myself if I can do simple full working web application solo.
 
 ---
@@ -35,17 +35,19 @@ The sole purpose of this project is to test myself if I can do simple full worki
 ![Saved Notes](savedB.jpg)
 
 ### **Contacts**
-![Contacts](contactB.jpg)
+![Contacts](questionsB.jpg)
 
 ---
 
 ## Small Screen Responsiveness (mobile) 
 
-![Mobile 1](M1.PNG)  
-![Mobile 2](M2.PNG)  
-![Mobile 3](M3.PNG)  
-![Mobile 4](M4.PNG)  
-![Mobile 5](M5.PNG)  
+<p align="center">
+  <img src="M1.PNG" alt="Mobile 1" width="200"/>
+  <img src="M2.PNG" alt="Mobile 2" width="200"/>
+  <img src="M3.PNG" alt="Mobile 3" width="200"/>
+  <img src="M4.PNG" alt="Mobile 4" width="200"/>
+  <img src="M5.PNG" alt="Mobile 5" width="200"/>
+</p>
 
 ---
 
@@ -61,5 +63,3 @@ The sole purpose of this project is to test myself if I can do simple full worki
 - Deployed with Render  
 
 ---
-
-This project marks my very first step into full-stack development and deployment. Excited to build more from here!
