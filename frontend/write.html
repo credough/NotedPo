@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="design elements/favicon.png">  
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>NotedPo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pinakalight: '#D3D1CE',
+            light: '#B3B7BA',
+            makulay: '#262E36',
+            gabi:'#090F15',
+          },
+          fontFamily: {
+          tite: ['Poppins', 'sans-serif'],
+        } 
+        }
+      }
+    }
+  </script>
+</head>
+<nav class="font-semibold text-gabi flex pl-10 pt-3">
+    <div class="flex items-center space-x-2">
+    <img src="design elements/NotedPo-logo.png.png" alt="Logo" class="h-8 w-8">
+    <span class="font-bold text-xl">NotedPo</span>
+  </div>
+</nav>
+<body class="bg-white text-makulay min-h-screen font-tite">
+
+     <img src="design elements/NotedPo-logo.png.png" 
+     alt="Background Logo" 
+     class="absolute top-1/2 right-[-150px] transform -translate-y-1/2 
+            w-[1000px] opacity-10 
+            select-none pointer-events-none" />
+
+  <div class="max-w-5xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-6 text-center" data-aos="fade-up" data-aos-delay="500">Write Your Notes</h1>
+
+    <!-- Note editor -->
+    <div class="bg-makulay rounded-xl shadow-lg p-6 mb-10">
+      <textarea id="noteInput"
+        class="w-full h-40 p-4 border-2 border-light rounded-lg focus:outline-none focus:ring-2 focus:ring-makulay resize-none"
+        placeholder="Start writing your notes here..." data-aos="fade-up" data-aos-delay="600"></textarea>
+
+      <div class="flex justify-between mt-6">
+        <a href="index.html"
+           class="px-6 py-3 bg-makulay text-pinakalight rounded-lg hover:bg-gabi transition" data-aos="fade-up" data-aos-delay="700">
+          Back
+        </a>
+        <button id="saveNote"
+          class="px-6 py-3 bg-makulay text-pinakalight rounded-lg hover:bg-gabi transition" data-aos="fade-up" data-aos-delay="700">
+          Sir, tapos na po
+        </button>
+      </div>
+    </div>
+
+    <!-- Notes Grid -->
+    <h2 class="text-2xl font-semibold mb-4" data-aos="fade-up" data-aos-delay="500">Saved Notes</h2>
+    <div id="notesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Notes will appear here -->
+    </div>
+  </div>
+
+  <script>
+
+const API_URL = "https://notedpo-backend.onrender.com/api/notes";
+
+const noteInput = document.getElementById("noteInput");
+const saveNoteBtn = document.getElementById("saveNote");
+const notesGrid = document.getElementById("notesGrid");
+
+let notes = [];
+
+// Render notes function (expects array of objects: {id, text, created_at})
+function renderNotes() {
+  notesGrid.innerHTML = "";
+  notes.forEach((note) => {
+    const card = document.createElement("div");
+    card.className = "bg-makulay p-4 rounded-lg shadow hover:shadow-md transition";
+
+    const textarea = document.createElement("textarea");
+    textarea.value = note.text;
+    textarea.className = "w-full p-2 rounded border border-light bg-white text-makulay resize-none mb-4";
+    textarea.rows = 6;
+
+    const meta = document.createElement("div");
+    meta.className = "text-pinakalight text-sm mb-2";
+    const dt = note.created_at ? new Date(note.created_at) : null;
+    meta.textContent = dt ? `Created: ${dt.toLocaleString()}` : "";
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "flex justify-between items-center";
+
+    const left = document.createElement("div");
+    left.className = "text-pinakalight text-xs truncate";
+    left.textContent = `ID: ${note.id}`;
+
+    const actions = document.createElement("div");
+    actions.className = "space-x-2";
+
+    const updateBtn = document.createElement("button");
+    updateBtn.textContent = "Save";
+    updateBtn.className = "px-3 py-1 bg-light text-gabi rounded hover:bg-pinakalight";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "🗑 Delete";
+    deleteBtn.className = "px-3 py-1 text-red-600 hover:text-red-800 rounded";
+
+    updateBtn.addEventListener("click", async () => {
+      const updatedText = textarea.value.trim();
+      if (!updatedText) return;
+      try {
+        const res = await fetch(`${API_URL}/${note.id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: updatedText }),
+        });
+        if (!res.ok) throw new Error("Update failed");
+        const updated = await res.json();
+        // Update in local array
+        notes = notes.map(n => (n.id === note.id ? updated : n));
+        renderNotes();
+      } catch (err) {
+        alert("Error updating note.");
+        console.error(err);
+      }
+    });
+
+    deleteBtn.addEventListener("click", async () => {
+      if (!confirm("Delete this note?")) return;
+      try {
+        const res = await fetch(`${API_URL}/${note.id}`, {
+          method: "DELETE",
+        });
+        if (!res.ok) throw new Error("Delete failed");
+        notes = notes.filter(n => n.id !== note.id);
+        renderNotes();
+      } catch (err) {
+        alert("Error deleting note.");
+        console.error(err);
+      }
+    });
+
+    actions.appendChild(updateBtn);
+    actions.appendChild(deleteBtn);
+
+    buttonContainer.appendChild(left);
+    buttonContainer.appendChild(actions);
+
+    card.appendChild(textarea);
+    card.appendChild(meta);
+    card.appendChild(buttonContainer);
+    notesGrid.appendChild(card);
+  });
+}
+
+// Load notes from backend
+async function loadNotes() {
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error("Failed to load notes");
+    notes = await res.json();
+    renderNotes();
+  } catch (err) {
+    console.error(err);
+    notesGrid.innerHTML = '<div class="text-red-600">Failed to load notes. Is the backend running?</div>';
+  }
+}
+
+// Save new note
+saveNoteBtn.addEventListener("click", async () => {
+  const noteText = noteInput.value.trim();
+  if (!noteText) return;
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: noteText }),
+    });
+    if (!res.ok) throw new Error("Create failed");
+    const newNote = await res.json();
+    notes.unshift(newNote);
+    noteInput.value = "";
+    renderNotes();
+  } catch (err) {
+    alert("Error saving note.");
+    console.error(err);
+  }
+});
+
+// Initial load
+loadNotes();
+
+</script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

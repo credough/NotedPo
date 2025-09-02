@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotedPO</title>
+  <!-------favicon---------->
+  <link rel="icon" type="image/png" href="design elements/favicon.png">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!---------poppins font----------->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!---------tailwind cdn----------->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pinakalight: '#D3D1CE',
+            light: '#B3B7BA',
+            makulay: '#262E36',
+            gabi:'#090F15',
+          },
+          fontFamily: {
+          tite: ['Poppins', 'sans-serif'],
+        } 
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white font-tite">
+
+
+  <!-- Navbar -->
+  <nav class="font-semibold text-gabi flex flex-wrap items-center justify-between px-6 py-4">
+    
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="design elements/NotedPo-logo.png.png" alt="Logo" class="h-8 w-8">
+      <span class="font-bold text-xl">NotedPo</span>
+    </div>
+
+    <!-- Links -->
+    <div class="flex flex-wrap space-x-6 mt-3 md:mt-0 text-center md:text-left">
+      <a href="#home" class="hover:text-light">Home</a>
+      <a href="#about" class="hover:text-light">About</a>
+      <a href="#notes" class="hover:text-light">Notes</a>
+      <a href="#contact" class="hover:text-light">Contacts</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative py-16 sm:py-24 text-center">
+    <!-- Background Logo -->
+    <img src="design elements/NotedPo-logo.png.png" 
+         alt="Background Logo" 
+         class="absolute top-1/2 right-0 transform -translate-y-1/2 
+                w-[300px] sm:w-[500px] md:w-[800px] lg:w-[1000px] opacity-10 
+                select-none pointer-events-none" />
+
+    <div class="max-w-3xl mx-auto px-4 relative z-10">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-makulay mb-4" data-aos="fade-up" data-aos-delay="700">
+        Welcome to NotedPo
+      </h1>
+      <p class="text-base sm:text-lg text-gabi" data-aos="fade-up" data-aos-delay="600">
+        A simple and distraction-free space where you can capture your thoughts, reflect on your day, and build the habit of journaling in a calm and organized way.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 sm:py-24 bg-light text-center px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gabi mb-4" data-aos="fade-up" data-aos-delay="400">
+        About
+      </h1>
+      <p class="text-base sm:text-lg text-gabi" data-aos="fade-up" data-aos-delay="500">
+        This is my first fully deployed CRUD web application. The backend is AI-assisted, enabling efficient handling of user data—allowing creation, saving, updating, and deletion of inputs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Notes Section -->
+  <section id="notes" class="py-16 sm:py-24 bg-makulay text-center px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-pinakalight mb-4" data-aos="fade-up" data-aos-delay="400">
+        Notes
+      </h1>
+      <p class="text-base sm:text-lg text-light mb-6" data-aos="fade-up" data-aos-delay="500">
+        Capture your thoughts and reflections here. Share your ideas, experiences, or daily moments.
+      </p>
+
+      <!-- Write Button -->
+      <a href="write.html" data-aos="fade-up" data-aos-delay="600"
+         class="inline-block px-6 py-3 bg-pinakalight text-makulay font-semibold rounded-lg shadow hover:bg-light hover:text-gabi transition">
+        Write
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="py-16 sm:py-24 text-center px-4">
+  <h1 class="text-3xl sm:text-4xl font-extrabold text-gabi mb-5 " data-aos="fade-up" data-aos-delay="400">
+        Questions? Send it here.
+      </h1>
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSefh0b0cWuBOb85TzB38hKNa2fEnTqr_2dbA8Q-G-8o_5rIiQ/formResponse" 
+      method="POST" target="_blank">
+
+  <!-- Full Name -->
+  <input type="text" name="entry.1471831341" placeholder="Full Name:" required><br><br>
+
+  <!-- email -->
+  <input type="text" name="entry.1827709887" placeholder="Email Address:" required><br><br>
+
+  <!-- number -->
+  <input type="text" name="entry.1188331246" placeholder="Phone Number:" required><br><br>
+
+  <!-- message -->
+  <input type="text" name="entry.1086079555" placeholder="Message:" required><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+</section>
+
+
+  <!-- Smooth Scroll -->
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+<!-- Footer -->
+<footer class="bg-gabi text-pinakalight py-6 mt-25">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+
+    <!-- Social Icons -->
+    <div class="flex space-x-5">
+      <a href="https://github.com/" target="_blank" class="hover:opacity-70">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="h-4 w-4 invert">
+      </a>
+      <a href="https://linkedin.com/" target="_blank" class="hover:opacity-70">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="h-4 w-4 invert">
+      </a>
+      <a href="https://facebook.com/" target="_blank" class="hover:opacity-70">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" class="h-4 w-4 invert">
+      </a>
+      <a href="https://x.com/" target="_blank" class="hover:opacity-70">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" class="h-4 w-4 invert">
+      </a>
+      <a href="https://instagram.com/" target="_blank" class="hover:opacity-70">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="h-4 w-4 invert">
+      </a>
+    </div>
+
+    <!-- Text -->
+    <p class="text-sm text-center sm:text-right">
+      © 2025 All rights reserved. Developed by <span class="font-semibold">Credo</span>.
+    </p>
+  </div>
+</footer>
+
+</html>
