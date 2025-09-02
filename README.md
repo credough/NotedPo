@@ -10,7 +10,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 
 ---
 
-## Features  
+## What's in it?
 - Write and save notes/journals online.  
 - Responsive UI for both desktop and mobile.  
 - Organized sections for smooth navigation.  
