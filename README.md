@@ -14,7 +14,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 - Write and save notes/journals online.  
 - Responsive UI for both desktop and mobile.  
 - Fully working backend API for note storage. (I used AI for backend whilst I'm just starting out learning python)
-- **Form Integration:** When a user sends a question, the data is automatically recorded in my **Google Sheets file in real time**. (see the SSs below) 
+- **Form Integration:** When a user sends a question, the details such as name, email, phone number, and message will automatically recorded in my **Google Sheets file in real time**. (see the SSs below) 
 
 ---
 
@@ -38,7 +38,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 ### **Queries**
 ![Contacts](questionsB.jpg)
 
-### **Queries to my sheets**
+### **Datas From Queries**
 ![Sheets](sheetsB.png)
 
 ---
@@ -61,7 +61,7 @@ The sole purpose of this project is to test myself if I can do simple full worki
 - HTML, Tailwind CSS (cdn only), JavaScript  
 - Deployed with Netlify 
 
-**Backend:**  
+**Backend:** 
 - Flask 
 - SQLite (for storing notes)  
 - Deployed with Render
